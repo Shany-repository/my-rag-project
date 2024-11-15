@@ -70,16 +70,7 @@ fi
 
 # Check if azd environment is refreshed
 echo "🔄 | Checking if azd environment is refreshed..."
-if ! check_azd_env; then
-    echo "⚠️  | Environment is not refreshed."
-    echo "ℹ️  | Run 'azd env refresh' to get environment variables from your azure deployment."
-    echo "ℹ️  | Choose the same environment name, subscription and location used when you deployed the environment."    
-    error_exit "Failed to retrieve environment values using 'azd env get-values'"
-else
-    echo "✅ | azd environment is  refreshed."
-    azd env get-values > .env
-    echo "📄 | Environment values saved to .env."
-fi
+
 
 # Install dependencies
 echo '📦 | Installing dependencies from "requirements.txt"...'
